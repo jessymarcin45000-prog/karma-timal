@@ -1,0 +1,70 @@
+# --- dependencies ---
+node_modules/
+.pnp/
+.pnp.js
+
+# --- testing ---
+coverage/
+
+# --- next.js ---
+.next/
+out/
+build/
+dist/
+
+# --- production ---
+*.tsbuildinfo
+next-env.d.ts
+
+# --- environment & secrets ---
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*.local
+*.pem
+*.key
+*.cert
+*.p12
+secrets/
+credentials.json
+service-account*.json
+
+# --- editor ---
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# --- logs ---
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# --- Vercel ---
+.vercel
+.turbo
+
+# --- Photos backup (originals) — gardés en privé ---
+public/photos/.originals/
+
+# --- Misc ---
+*.log
+.cache/
+tmp/
+
+# Config IDE locale (Claude Code launch.json + wrapper scripts)
+.claude/
