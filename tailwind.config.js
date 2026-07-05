@@ -8,21 +8,39 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        // ── Fonds & profondeur (élégance scénique) ──────────────────────
         noir:    "#0A0A0A",
         "noir-2": "#111111",
         "noir-3": "#1A1A1A",
-        sable:   "#E8D5B0",
-        bronze:  "#B87333",
-        sunset:  "#E8692A",
-        creme:   "#F5F0E8",
-        or:      "#C4A96A",
-        "or-light": "#D4BB7A",
-        // ── Vert tropical / sapin — complément organique de la charte ──
-        vert:        "#2A4A38",   // accent principal — vert sapin chaleureux
-        "vert-deep": "#162B20",   // pour fonds & ambiance
-        "vert-light":"#4A7558",   // hover & textes accent
-        "vert-soft": "#6F9D80",   // textes secondaires & lueurs
-        tropical:    "#2A4A38",   // alias historique
+
+        // ── Lumière du soleil (chaleur, identité signature) ─────────────
+        creme:        "#F5EFE1",   // +légèrement plus chaud — texte principal
+        sable:        "#E8D5B0",   // sable de plage
+        "sable-light":"#F0DEB4",   // sable clair (citations, dividers)
+        or:           "#D4B26A",   // +légèrement plus solaire
+        "or-light":   "#E5C988",   // hover or
+
+        // ── NOUVEAU : Océan caribéen (voyage, profondeur, fraîcheur) ────
+        "ocean-deep": "#0E3B43",   // bleu pétrole profond — fonds immersifs
+        ocean:        "#1A6A78",   // bleu mer — confiance, calme
+        turquoise:    "#4DB1A5",   // turquoise Caraïbes — énergie, hover
+        "turquoise-soft": "#7AC7BD", // turquoise pâle — textes accent
+
+        // ── NOUVEAU : Coucher de soleil (CTA urgent, émotion) ───────────
+        coral:        "#E8704A",   // CTA principal — point d'urgence chaud
+        "coral-light":"#F08766",   // hover coral
+        terra:        "#B05E3A",   // terre tropicale — ancrage, ornements
+
+        // ── Vert tropical (nature, organique) ───────────────────────────
+        vert:         "#2A4A38",   // vert sapin profond
+        "vert-deep":  "#162B20",   // fonds & ambiance
+        "vert-light": "#4A7558",   // hover & textes accent
+        "vert-soft":  "#6F9D80",   // textes secondaires
+
+        // ── Aliases legacy (pour ne pas casser l'existant) ──────────────
+        bronze:   "#B87333",
+        sunset:   "#E8692A",
+        tropical: "#2A4A38",
       },
       fontFamily: {
         serif: ["var(--font-playfair)", "Georgia", "serif"],

@@ -18,10 +18,10 @@ export default function MusiquePage() {
       <ScrollProgress />
 
       <PageHero
-        label="Discographie"
-        title="La Musique de"
-        titleItalic="Karma Timal"
-        subtitle="Des compositions qui traversent les cultures, portées par une voix organique, chaude et universelle."
+        label="Écouter"
+        title="L'EP Soleil"
+        titleItalic="& le live"
+        subtitle="Plongez dans l'univers afro-jazz, soul créole et latino de Karma Timal — EP Soleil sur Spotify, extraits live au Baiser Salé et concerts en plein air."
         accent="true"
       />
 

@@ -53,15 +53,17 @@ export default function StorySection() {
               <div className="absolute bottom-4 right-4 w-8 h-8 border-b border-r border-or/40" />
             </div>
 
-            {/* Floating accent card */}
+            {/* Floating accent card — citation plutôt que statistique non-vérifiable */}
             <motion.div
-              className="absolute -bottom-6 -right-6 lg:-right-10 bg-noir-2 border border-or/20 p-5 max-w-[180px]"
+              className="absolute -bottom-6 -right-6 lg:-right-10 bg-noir-2 border border-or/20 p-5 max-w-[200px]"
               animate={{ y: [0, -6, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
             >
-              <p className="text-or text-3xl font-serif font-bold">12+</p>
-              <p className="text-sable/50 text-[10px] tracking-widest uppercase mt-1 leading-snug">
-                Années de scène
+              <p className="font-serif italic text-or text-base lg:text-lg leading-snug">
+                &ldquo;Une musique qui voyage.&rdquo;
+              </p>
+              <p className="text-sable/50 text-[10px] tracking-widest uppercase mt-2 leading-snug">
+                — Karma Timal
               </p>
             </motion.div>
 
@@ -108,16 +110,16 @@ export default function StorySection() {
               </RevealText>
             </div>
 
-            {/* Stats row */}
+            {/* Univers musical row — qualitatif & vérifiable (vs chiffres invérifiables) */}
             <RevealText delay={0.6}>
               <div className="grid grid-cols-3 gap-px border border-or/10">
                 {[
-                  { number: "200+", label: "Concerts" },
-                  { number: "15+", label: "Pays" },
-                  { number: "50K+", label: "Fans" },
+                  { number: "Live", label: "Voix · Guitare", color: "text-or" },
+                  { number: "Looper", label: "Beatbox · Improvisation", color: "text-vert-light" },
+                  { number: "Paris", label: "Baiser Salé & scènes", color: "text-or" },
                 ].map((stat) => (
                   <div key={stat.label} className="py-5 px-4 bg-noir-3/40 text-center">
-                    <p className={`font-serif text-2xl ${stat.label === "Pays" ? "text-vert-light" : "text-or"}`}>{stat.number}</p>
+                    <p className={`font-serif text-xl ${stat.color}`}>{stat.number}</p>
                     <p className="text-sable/40 text-[9px] tracking-widest uppercase mt-1">{stat.label}</p>
                   </div>
                 ))}

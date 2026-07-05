@@ -11,16 +11,32 @@ import Link from "next/link";
 
 type ConcertType = "Tous" | "Festival" | "Concert Salle" | "Événement Privé" | "Hôtel & Resort" | "Plein Air";
 
-const concerts = [
-  { date: "15 Juin 2026",  title: "La Cave du Jazz",          location: "Paris, France",              type: "Concert Salle",     sold: false, tickets: "#" },
-  { date: "28 Juin 2026",  title: "Festival des Îles",         location: "Pointe-à-Pitre, Guadeloupe", type: "Festival",          sold: false, tickets: "#" },
-  { date: "05 Juil 2026",  title: "Villa Bella — Privatisation", location: "Saint-Tropez, France",    type: "Événement Privé",   sold: true,  tickets: null },
-  { date: "20 Juil 2026",  title: "Rooftop Jazz Sessions",    location: "Marseille, France",           type: "Plein Air",         sold: false, tickets: "#" },
-  { date: "02 Août 2026",  title: "Hôtel Majestic Live",      location: "Cannes, France",              type: "Hôtel & Resort",    sold: true,  tickets: null },
-  { date: "15 Août 2026",  title: "Festival Terre des Arts",  location: "Fort-de-France, Martinique",  type: "Festival",          sold: false, tickets: "#" },
-  { date: "04 Sep 2026",   title: "Jazz en Île",              location: "Paris, France",               type: "Concert Salle",     sold: false, tickets: "#" },
-  { date: "20 Sep 2026",   title: "Mariage Privé — Provence", location: "Gordes, France",              type: "Événement Privé",   sold: true,  tickets: null },
-  { date: "10 Oct 2026",   title: "Hôtel Royal — Jazz Lounge", location: "Nice, France",              type: "Hôtel & Resort",    sold: false, tickets: "#" },
+// ─────────────────────────────────────────────────────────────────────────────
+// Liste des concerts à venir.
+//
+// Pour ajouter une vraie date : copier l'objet ci-dessous, remplir les champs.
+//   `sold: true`   → "COMPLET" affiché, pas de lien tickets
+//   `tickets: "#"` → bouton "Billetterie" actif (remplacer "#" par l'URL réelle)
+//   `tickets: null` → pas de bouton billetterie (événement privé / sur invit')
+// ─────────────────────────────────────────────────────────────────────────────
+const concerts: Array<{
+  date: string;
+  title: string;
+  location: string;
+  type: ConcertType;
+  sold: boolean;
+  tickets: string | null;
+}> = [
+  // Exemple à conserver pour montrer une scène signature :
+  {
+    date: "Sur réservation",
+    title: "Live au Baiser Salé",
+    location: "58 rue des Lombards, Paris",
+    type: "Concert Salle",
+    sold: false,
+    tickets: "https://www.lebaisersale.com/",
+  },
+  // ↓ Ajoutez vos vraies dates ici ↓
 ];
 
 const filters: ConcertType[] = ["Tous", "Festival", "Concert Salle", "Événement Privé", "Hôtel & Resort", "Plein Air"];
@@ -142,8 +158,23 @@ export default function ConcertsPage() {
               ))}
 
               {filtered.length === 0 && (
-                <div className="py-20 text-center">
-                  <p className="text-sable/30 text-sm tracking-widest">Aucun concert dans cette catégorie.</p>
+                <div className="py-16 lg:py-24 text-center max-w-xl mx-auto">
+                  <p className="text-or text-[10px] tracking-[0.4em] uppercase mb-4">
+                    Prochaines dates en cours de confirmation
+                  </p>
+                  <h3 className="font-serif text-2xl lg:text-3xl text-creme leading-snug mb-4">
+                    Aucune date dans cette catégorie pour l&apos;instant
+                  </h3>
+                  <p className="text-sable/60 text-sm leading-relaxed mb-8">
+                    Pour être informé(e) des prochaines dates en avant-première, suivez
+                    Karma Timal sur les réseaux — ou réservez-le pour votre propre événement.
+                  </p>
+                  <Link href="/booking" className="btn-primary">
+                    Réserver un concert
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </Link>
                 </div>
               )}
             </motion.div>
